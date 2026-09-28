@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Minesweeper</title>
+        <style>
+            body{
+                margin:0;
+                background:#222;
+                color:white;
+                font-family:Arial;
+                text-align:center;
+            }
+
+            #game{
+                display:grid;
+                margin:20px auto;
+                width:max-content
+            }
+
+            .cell{
+                width:30px;
+                height:30px;
+                background: #444;
+                border:1px solid #555;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Minesweeper</h1>
+        <div id="game"></div>
+
+        <script>
+            let game=document.getElementById("game");
+            for(let i=0;i<81;i++){
+                let cell=document.createElement("div");
+                cell.className="cell";
+                game.appendChild(cell);
+            }
+        </script>
+    </body>
+</html>
