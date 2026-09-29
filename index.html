@@ -13,7 +13,8 @@
             #game{
                 display:grid;
                 margin:20px auto;
-                width:max-content
+                width: max-content;
+                grid-template-columns: repeat(9,30px);
             }
 
             .cell{
@@ -28,13 +29,27 @@
         <h1>Minesweeper</h1>
         <div id="game"></div>
 
-        <script>
-            let game=document.getElementById("game");
-            for(let i=0;i<81;i++){
-                let cell=document.createElement("div");
-                cell.className="cell";
-                game.appendChild(cell);
-            }
-        </script>
+    <script>
+    let game=document.getElementById("game");
+    let mines=[]
+
+    while(mines.length<10){let n=Math.floor(Math.random()*81);if(!mines.includes(n))mines.push(n)}
+
+
+    for(let i=0;i<81;i++){
+        let cell=document.createElement("div");
+        cell.className="cell";
+
+        let x=i%9,y=Math.floor(i/9),n=0;
+        for(let a=-1;a<2;a++)for(let b=-1;b<2;b++)if(mines.includes(i+a+b*9))n++;
+
+        cell.onclick=function(){
+            if(mines.includes(i))cell.textContent="*";else if(n)cell.textContent=n;
+            cell.style.background="#777";
+        };
+
+        game.appendChild(cell);
+    }
+    </script>
     </body>
 </html>
