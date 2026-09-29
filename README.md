@@ -1,3 +1,3 @@
 # Lightweight-minesweeper
-storage usage now: 2KB
+storage usage now: 1KB
 limit: 5KB
