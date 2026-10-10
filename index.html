@@ -25,8 +25,9 @@ cell.className="cell";
 let x=i%9,y=Math.floor(i/9),n=0;
 for(let a=-1;a<2;a++)for(let b=-1;b<2;b++)if(x+a>=0&&x+a<9&&y+b>=0&&y+b<9&&mines.includes(i+a+b*9))n++;
 
+cell.oncontextmenu=function(e){e.preventDefault();if(!over)cell.textContent=cell.textContent=="F"?"":"F"};
 cell.onclick=function(){
-if(over)return;
+if(over||cell.style.background=="rgb(119, 119, 119)")return;
 if(mines.includes(i)){cell.textContent="*";over=true;alert("Game over!")}
 else if(n)cell.textContent=n;
 cell.style.background="#777";
