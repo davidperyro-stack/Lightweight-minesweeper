@@ -4,12 +4,13 @@
 <style>
 body{margin:0;background:#222;color:white;font-family:Arial;text-align:center}
 #game{display:grid;margin:20px auto;width:max-content;grid-template-columns:repeat(9,30px)}
-.cell{width:30px;height:30px;background:#444;border:1px solid #555}
+.cell{width:30px;height:30px;background:#444;border:1px solid #555;color:white;font-weight:bold;font-size:16px}
 </style>
 </head>
 <body>
 <h1>Minesweeper</h1>
 <div id="game"></div>
+<button onclick="location.reload()">Restart</button>
 
 <script>
 let game=document.getElementById("game");
