@@ -20,6 +20,8 @@ A simple lightweight minesweeper game
 - copy the text
 - paste it on your browser
 
+or just simply click here --> https://davidperyro-stack.github.io/Lightweight-minesweeper/
+
 ## AI Usage
 
 I used AI to understand the requiments for the Repo for https://shrink.hackclub.com/
